@@ -11,6 +11,8 @@ elif size in ('M', 'm'):
     bill += 20
 elif size in ('L','l'):
     bill += 25
+else:
+    print('Invalid Input !!!')
 
 if pepperoni in ('Y','y'):
     print('Added Pepperoni !!')
