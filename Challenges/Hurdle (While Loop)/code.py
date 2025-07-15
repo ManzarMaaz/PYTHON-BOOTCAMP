@@ -14,7 +14,4 @@ def jump():
     turn_left()
 
 while not at_goal():
-    for x in range(6):
-        jump()
-    else:
-        break
+    jump()
