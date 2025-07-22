@@ -1,6 +1,6 @@
 # 🧮 Python Calculator (CLI App)
 
-A simple command-line calculator built using Python as part of my #100DaysOfCode journey with [Angela Yu's Python Bootcamp](https://www.udemy.com/course/100-days-of-code/).
+A simple command-line calculator built using Python as part of my #100DaysOfCode journey 
 
 ## 📌 Features
 
