@@ -22,8 +22,9 @@ It was created as part of a bootcamp project to reinforce skills like dictionari
    ```bash
    git clone https://github.com/ManzarMaaz/PYTHON-BOOTCAMP.git
    cd PYTHON-BOOTCAMP/Projects/CoffeeMachine
-```
+
 2. Sample Output
+```
 What would you like? (Espresso, Latte, Cappuccino) : latte
 Please Insert Money:\n
 Enter Quarters : 10
