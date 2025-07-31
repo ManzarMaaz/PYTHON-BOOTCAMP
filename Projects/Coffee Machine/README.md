@@ -26,7 +26,7 @@ It was created as part of a bootcamp project to reinforce skills like dictionari
 2. Sample Output
 ```
 What would you like? (Espresso, Latte, Cappuccino) : latte
-Please Insert Money:\n
+Please Insert Money:
 Enter Quarters : 10
 Enter Dimes : 0
 Enter Nickles : 0
