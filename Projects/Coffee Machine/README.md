@@ -22,9 +22,9 @@ It was created as part of a bootcamp project to reinforce skills like dictionari
    ```bash
    git clone https://github.com/ManzarMaaz/PYTHON-BOOTCAMP.git
    cd PYTHON-BOOTCAMP/Projects/CoffeeMachine
-
+```
 2. Sample Output
-What would you like? (Espresso, Latte, Cappuccino) : latte\n
+What would you like? (Espresso, Latte, Cappuccino) : latte
 Please Insert Money:\n
 Enter Quarters : 10
 Enter Dimes : 0
@@ -34,4 +34,4 @@ You given an amount of $2.5
 The Cost of latte is $2.5
 Here is your change of $0.0
 Here is your Fresh latte 🥤☕️ !!!
-
+```
