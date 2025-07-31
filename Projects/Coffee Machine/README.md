@@ -24,8 +24,8 @@ It was created as part of a bootcamp project to reinforce skills like dictionari
    cd PYTHON-BOOTCAMP/Projects/CoffeeMachine
 
 2. Sample Output
-What would you like? (Espresso, Latte, Cappuccino) : latte
-Please Insert Money:
+What would you like? (Espresso, Latte, Cappuccino) : latte\n
+Please Insert Money:\n
 Enter Quarters : 10
 Enter Dimes : 0
 Enter Nickles : 0
