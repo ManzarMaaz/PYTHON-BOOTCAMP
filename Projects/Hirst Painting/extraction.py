@@ -4,7 +4,7 @@ import colorgram
 
 rgb_colors = []
 
-colors = colorgram.extract('/Users/mohammad/Desktop/100 DAYS OF CODE/DAY 18/hirst-painting-start/image.jpg', 30)
+colors = colorgram.extract('/image.jpg', 30)
 
 for color in colors:
     r = color.rgb.r
