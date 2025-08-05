@@ -1,0 +1,17 @@
+###This code will not work in repl.it as there is no access to the colorgram package here.###
+##We talk about this in the video tutorials##
+import colorgram
+
+rgb_colors = []
+
+colors = colorgram.extract('/Users/mohammad/Desktop/100 DAYS OF CODE/DAY 18/hirst-painting-start/image.jpg', 30)
+
+for color in colors:
+    r = color.rgb.r
+    g = color.rgb.g
+    b = color.rgb.b
+    new_colors = (r, g, b)
+    rgb_colors.append(new_colors)
+    
+
+print(rgb_colors)
