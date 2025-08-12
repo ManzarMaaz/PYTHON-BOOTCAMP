@@ -7,7 +7,7 @@ class Food(Turtle):
 
     def __init__(self):
         super().__init__()
-        self.shape("/Users/mohammad/Desktop/100 DAYS OF CODE/DAY 20/apple_small.gif")
+        self.shape("apple_small.gif")
         self.shapesize(0.5,0.5)
         self.penup()
         self.refresh()
