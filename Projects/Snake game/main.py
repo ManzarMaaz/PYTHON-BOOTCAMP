@@ -8,10 +8,10 @@ from scoreboard import Scoreboard
 score = 0
 
 screen = Screen()
-screen.bgpic('/Users/mohammad/Desktop/100 DAYS OF CODE/DAY 20/grass_ex.gif')# Grass green hex
+screen.bgpic('grass_ex.gif')# Grass green hex
 screen.setup(600,600)
 screen.tracer(0)
-screen.register_shape("/Users/mohammad/Desktop/100 DAYS OF CODE/DAY 20/apple_small.gif")
+screen.register_shape("apple_small.gif")
 
 
 screen.title('Py Snake Game')   
