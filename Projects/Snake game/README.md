@@ -50,26 +50,26 @@ py-snake-game/
 │── apple_small.gif  # Food image
 │── README.md
 
-#🎮 Controls
+# 🎮 Controls
 Key	Action
 W	-Move Up
 S	-Move Down
 A	-Move Left
 D	-Move Right
 
-#📌 How the Game Works
+# 📌 How the Game Works
 The snake moves automatically in the current direction.
 
 Eat the apple to grow in length and increase your score.
 
 If you hit the wall or your own tail, the game ends.
 
-#🖼️ Assets Used
+# 🖼️ Assets Used
 Grass background (grass_ex.gif)
 
 Apple food (apple_small.gif)
 
-#🚀 Future Enhancements
+# 🚀 Future Enhancements
 Add sound effects
 
 Add difficulty levels
@@ -78,7 +78,7 @@ Add high-score storage
 
 Make it mobile-friendly
 
-#💡 Inspiration
+# 💡 Inspiration
 Built as part of the 100 Days of Code: Python Bootcamp by Angela Yu, with custom assets for a fresh look.
 
 #📜 License
