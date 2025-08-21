@@ -1,6 +1,3 @@
-Here’s a neat **GitHub README.md** you can use for your NATO Phonetic Alphabet project 🚀
-
-```markdown
 # NATO Phonetic Alphabet 🔤
 
 This project is part of **Day 26 – 100 Days of Code: Python Bootcamp**.  
