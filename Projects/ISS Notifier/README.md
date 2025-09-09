@@ -45,9 +45,6 @@ Run the script:
 python main.py
 ```
 
-And for the "What I Learned" + "Future Improvements", split them into lists like this:  
-
-
 ## What I Learned
 ```markdown
 - Using multiple APIs in a single project  
