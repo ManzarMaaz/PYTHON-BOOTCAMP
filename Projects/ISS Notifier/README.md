@@ -47,13 +47,15 @@ python main.py
 
 And for the "What I Learned" + "Future Improvements", split them into lists like this:  
 
-```markdown
+
 ## What I Learned
+```markdown
 - Using multiple APIs in a single project  
 - Sending automated emails with Python and SMTP  
 - Writing scripts that run continuously and check conditions in real time  
-
+```
 ## Future Improvements
+```
 - Integrate with SMS or push notifications  
 - Build a Tkinter GUI version for easy setup  
 - Deploy as a background service or cron job  
