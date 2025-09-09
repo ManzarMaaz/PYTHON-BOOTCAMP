@@ -30,22 +30,31 @@ Install requirements:
 pip install requests
 
 Update the following variables in main.py with your own details:
+```
 my_mail = "your_email@gmail.com"
 password = "your_app_password"
 to_mail = "recipient_email@gmail.com"
 my_latitude = "your_latitude"
 my_longitude = "your_longitude"
+```
 
 Note: For Gmail, you need to create an App Password instead of using your main password.
 
 Run the script:
+```
 python main.py
+```
 
-What I Learned
-Using multiple APIs in a single project
-Sending automated emails with Python and SMTP
-Writing scripts that run continuously and check conditions in real time
-Future Improvements
-Integrate with SMS or push notifications
-Build a Tkinter GUI version for easy setup
-Deploy as a background service or cron job
+And for the "What I Learned" + "Future Improvements", split them into lists like this:  
+
+```markdown
+## What I Learned
+- Using multiple APIs in a single project  
+- Sending automated emails with Python and SMTP  
+- Writing scripts that run continuously and check conditions in real time  
+
+## Future Improvements
+- Integrate with SMS or push notifications  
+- Build a Tkinter GUI version for easy setup  
+- Deploy as a background service or cron job  
+
