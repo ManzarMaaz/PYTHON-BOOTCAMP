@@ -15,12 +15,14 @@ A Python-based Quiz Game that fetches **live trivia questions** from the [Open T
 ---
 
 ## 📂 Project Structure
+```css
 ├── main.py # Entry point
 ├── ui.py # Tkinter user interface
 ├── quiz_brain.py # Quiz logic and scoring
 ├── question_model.py # Question object
 ├── data.py # API call for fetching questions
 └── images/ # UI button images (True/False)
+```
 
 ---
 
@@ -30,36 +32,36 @@ A Python-based Quiz Game that fetches **live trivia questions** from the [Open T
    git clone https://github.com/your-username/quizzler-app.git
    cd quizzler-app
    
-##Install dependencies:
+## Install dependencies:
 ```
 pip install requests
 ```
 
-##Run the app:
+## Run the app:
 ```
 python main.py
 ```
 
-##🎮 Demo
+## 🎮 Demo
 ```
 The app fetches 10 random True/False sports questions and lets you test your knowledge in a fun way.
 Each correct answer increases your score, and feedback is given instantly with color highlights.
 ```
-##📚 What I Learned
+## 📚 What I Learned
 ```
 Working with external APIs (Open Trivia DB)
 Using html.unescape() to clean API text
 Structuring a Tkinter app with multiple modules
 Implementing OOP concepts (Question, QuizBrain, QuizInterface)
 ```
-##🚀 Future Improvements
+## 🚀 Future Improvements
 ```
 Add multiple categories & difficulty levels
 Support multiple-choice questions
 Track high scores and quiz history
 Package into a desktop app with PyInstaller
 ```
-##🛠️ Tech Stack
+## 🛠️ Tech Stack
 ```
 Python 3
 Tkinter (UI)
