@@ -1,7 +1,7 @@
 # ☔ Rain Alert App
-```
+
 A Python automation script that checks the **weather forecast** using the [OpenWeather API](https://openweathermap.org/api) and sends an **SMS alert** if rain is predicted — powered by [Twilio](https://www.twilio.com/).
-```
+
 ---
 
 ## 🔑 Features
