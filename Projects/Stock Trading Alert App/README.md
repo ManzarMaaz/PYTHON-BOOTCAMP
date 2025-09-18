@@ -43,7 +43,7 @@ This project demonstrates practical integration of multiple APIs to build a usef
 5. Run the script:
   ```bash
   python main.py
-
+  ```
 ## 📩 Example SMS Alert
   ```bash
   TSLA: 🔺2%
