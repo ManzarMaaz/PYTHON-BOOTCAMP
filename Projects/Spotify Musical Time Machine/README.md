@@ -92,7 +92,7 @@ Example Console Output:
 ```markdown
 ...
 Song name: SOUND OF THE UNDERGROUND, Song uri: spotify:track:0SKjqIViHaXWhmaKuJbMrq
-Song name: CHEEKY SONG (TOUCH MY BUM), Song uri: spotify:track:6MCovnA5m16hln36lk0gqM
+Song name: CHEEKY SONG, Song uri: spotify:track:6MCovnA5m16hln36lk0gqM
 Song Not Found: SACRED TRUST/AFTER YOU'RE GONE
 Song name: SORRY SEEMS TO BE THE HARDEST WORD, Song uri: spotify:track:15iPQnhXcy5R3p90MbsOxe
 ...
