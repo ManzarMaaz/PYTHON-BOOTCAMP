@@ -89,7 +89,7 @@ python main.py
 The script will ask for a date, then show its progress as it finds each song, and finally, create the playlist in your Spotify account.
 
 Example Console Output:
-```bash
+```markdown
 ...
 Song name: SOUND OF THE UNDERGROUND, Song uri: spotify:track:0SKjqIViHaXWhmaKuJbMrq
 Song name: CHEEKY SONG (TOUCH MY BUM), Song uri: spotify:track:6MCovnA5m16hln36lk0gqM
