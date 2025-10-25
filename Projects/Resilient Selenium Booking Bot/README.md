@@ -91,4 +91,4 @@ Contributions are welcome!
 ## License
 MIT License
 ## Demo
-(Optional: Add a GIF or screenshot showing the bot booking a class in real time)
+![2020-08-25_09-59-32-fd7f7957ed362ae11091cdd39e0e878d](https://github.com/user-attachments/assets/40937cdf-9f32-4956-9342-8f1b99775961)
