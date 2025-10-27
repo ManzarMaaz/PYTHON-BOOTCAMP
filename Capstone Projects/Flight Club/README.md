@@ -1,131 +1,191 @@
-# ✈️ Flight Club
+# ✈️ Flight Deal Tracker Automation 🚀
 
-An automated flight deal finder that notifies a club of users via email and SMS.
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white)
+![Requests](https://img.shields.io/badge/Requests-HTTP%20Client-orange?logo=python&logoColor=white)
+![Twilio](https://img.shields.io/badge/Twilio-SMS%20API-red?logo=twilio&logoColor=white)
+![Amadeus](https://img.shields.io/badge/Amadeus-Flight%20API-blue?logo=amadeus&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-This project, **Flight Club**, is an enhanced application that automates the search for cheap flights. It features logic for **indirect flights**, sends personalized **email notifications** to a member list, and uses **INR (₹)** as its primary currency. The application tracks destinations from a Google Sheet and alerts all club members when a flight price drops below a set target.
+A powerful end-to-end **Flight Deal Tracker** that automates flight search, monitors price drops, and sends instant alerts via **SMS** and **Email**.  
+It combines real-world APIs — **Amadeus**, **Sheety**, and **Twilio** — to provide a hands-on experience with data pipelines, API integration, and automation workflows.
 
-
-
----
-
-## ✨ Key Features
-
--   **Club Notification System**: Sends alerts via **Twilio SMS** and personalized **emails** to a list of subscribed Flight Club members.
--   **Indirect Flight Search**: If no direct flights are found, the application automatically searches for cheaper routes with stopovers to find the best possible deal.
--   **Dynamic Member Management**: Manages both flight destinations and a user email list from separate tabs in a Google Sheet.
--   **Automated Data Enrichment**: Automatically finds and populates missing IATA airport codes for your destination cities.
--   **Secure Configuration**: All API keys and sensitive credentials are kept secure using a `.env` file.
--   **Modular Codebase**: The project is structured into logical classes for data management, flight searching, and notifications, making it easy to maintain and extend.
+> ⚠️ **Disclaimer:**  
+> This project is for **educational purposes only**. Use responsibly and ensure compliance with API rate limits and platform terms.
 
 ---
 
-## ⚙️ How It Works
+## 📑 Table of Contents
 
-**Flight Club** executes a sophisticated workflow to find and report the best flight deals:
-
-1.  **Fetch Club Data**: It connects to Google Sheets via the Sheety API to retrieve two sets of data:
-    -   A list of cities and target prices from the 'Prices' sheet.
-    -   A list of club members (first name, last name, email) from the 'Users' sheet.
-2.  **Update IATA Codes**: It checks the 'Prices' sheet for any cities missing an IATA airport code, fetches it using the Amadeus API, and updates the sheet.
-3.  **Search for Flights**: For each destination, the script performs a two-step search:
-    -   First, it queries the Amadeus API for the cheapest **direct (non-stop)** flight.
-    -   If no direct flight is found, it automatically performs a second search for **indirect flights** (with one or more stops).
-4.  **Alert the Club**: If a flight's price is below the target price:
-    -   An **SMS alert** is sent via Twilio with the core deal details.
-    -   A **personalized email**, signed "Yours Sincerely, Flight Club," is sent to every member in the 'Users' list with detailed flight information.
+- [Features](#-features)  
+- [Architecture Overview](#-architecture-overview)  
+- [API Interaction Map](#-api-interaction-map)  
+- [Workflow Diagram](#-workflow-diagram)  
+- [Tech Stack](#-tech-stack)  
+- [Installation](#-installation)  
+- [Environment Variables](#-environment-variables)  
+- [Usage](#-usage)  
+- [Impact / Learning](#-impact--learning)  
+- [Future Enhancements](#-future-enhancements)  
+- [License](#-license)  
+- [Connect](#-connect)
 
 ---
 
-## 🛠️ Technology Stack
+## 🌟 Features
 
--   **Language**: Python 3
--   **APIs**:
-    -   **Amadeus**: For comprehensive flight data, including stopover information.
-    -   **Sheety**: To read from and write to Google Sheets.
-    -   **Twilio**: For sending SMS notifications.
--   **Core Libraries**:
-    -   `requests`: For handling all API requests.
-    -   `python-dotenv`: To manage environment variables.
-    -   `smtplib`: For sending emails via a Gmail SMTP server.
-      
+- Fetches city and pricing data from **Google Sheets** via **Sheety API**  
+- Looks up **IATA airport codes** via **Amadeus API**  
+- Searches for **direct and indirect flight offers** between two cities  
+- Automatically compares **current flight price** vs **target price**  
+- Sends **SMS alerts (Twilio)** and **Email notifications (SMTP)** for deals  
+- Modular design with:
+  - `FlightSearch` → Handles Amadeus API  
+  - `FlightDataManager` → Manages Google Sheet  
+  - `NotificationManager` → Sends alerts  
+  - `FlightData` → Data model for each destination  
+
 ---
 
-## 🚀 Getting Started
+## 🧠 Architecture Overview
 
-Follow these instructions to get the project running locally.
+```
 
-### Prerequisites
+Google Sheet (Sheety)  ↔  FlightDataManager  ↔  FlightSearch (Amadeus)
+↘
+Notifier
+↙
+Twilio (SMS)  +  SMTP (Email)
 
--   Python 3.x installed.
--   Active accounts with [Amadeus for Developers](https://developers.amadeus.com/), [Sheety](https://sheety.co/), and [Twilio](https://www.twilio.com/).
--   A Google Account with an app password for sending emails.
--   A Google Sheet with two tabs:
-    -   `prices`: with columns `city`, `iataCode`, and `lowestPrice`.
-    -   `users`: with columns `firstName`, `lastName`, and `email`.
+````
+---
 
-### Installation & Setup
+## 🧩 Workflow Diagram
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
-    cd your-repository-name
-    ```
+```mermaid
+flowchart TD
+    A[Start Script] --> B[Fetch Destination Data from Sheety]
+    B --> C[Fetch or Update IATA Codes via Amadeus API]
+    C --> D[Search Flights from Origin ➡️ Destination]
+    D --> E{Cheaper than Target Price?}
+    E -->|Yes| F[Trigger Twilio SMS + Send Email Notifications]
+    E -->|No| G[Log: No Cheaper Deal]
+    F --> H[Loop Next Destination]
+    G --> H
+    H --> I[End: Summary Logged in Console]
+```
 
-2.  **Create and activate a virtual environment:**
-    ```bash
-    # For macOS/Linux
-    python3 -m venv venv
-    source venv/bin/activate
+---
 
-    # For Windows
-    python -m venv venv
-    .\venv\Scripts\activate
-    ```
+## 🧰 Tech Stack
 
-3.  **Install the required packages:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-    *(Note: Create a `requirements.txt` file with `requests`, `python-dotenv`, and `twilio`.)*
+| Component         | Technology Used                                               |
+| ----------------- | ------------------------------------------------------------- |
+| **Language**      | Python 3.10+                                                  |
+| **APIs**          | Amadeus (Flight Search), Sheety (Google Sheets), Twilio (SMS) |
+| **Libraries**     | requests, twilio, python-dotenv, smtplib, dataclasses         |
+| **Email Service** | Gmail SMTP (or any SMTP)                                      |
+| **Architecture**  | Modular OOP structure                                         |
 
-4.  **Configure environment variables:**
-    Create a `.env` file in the root directory and populate it with your credentials:
+---
 
-    ```env
-    # Amadeus API Credentials
-    AMADEUS_API_KEY="YOUR_AMADEUS_API_KEY"
-    API_SECRET="YOUR_AMADEUS_API_SECRET"
-    TOKEN_ENDPOINT="[https://test.api.amadeus.com/v1/security/oauth2/token](https://test.api.amadeus.com/v1/security/oauth2/token)"
-    CITY_SEARCH_ENDPOINT="[https://test.api.amadeus.com/v1/reference-data/locations](https://test.api.amadeus.com/v1/reference-data/locations)"
-    FLIGHT_ENDPOINT="[https://test.api.amadeus.com/v2/shopping/flight-offers](https://test.api.amadeus.com/v2/shopping/flight-offers)"
-    ORIGIN_CITY_IATA="HYD" # Example: Hyderabad
+## ⚙️ Installation
 
-    # Sheety API Endpoints
-    SHEETY_PRICES_ENDPOINT="YOUR_SHEETY_PRICES_API_ENDPOINT"
-    SHEETY_USERS_ENDPOINT="YOUR_SHEETY_USERS_API_ENDPOINT"
-    SHEETY_USERNAME="YOUR_SHEETY_USERNAME"
-    SHEETY_PASSWORD="YOUR_SHEETY_PASSWORD"
-
-    # Twilio API Credentials
-    TWILIO_SID="YOUR_TWILIO_ACCOUNT_SID"
-    TWILIO_AUTH_TOKEN="YOUR_TWILIO_AUTH_TOKEN"
-    TWILIO_VIRTUAL_NUMBER="YOUR_TWILIO_PHONE_NUMBER"
-    TWilio_VERIFIED_NUMBER="YOUR_PERSONAL_PHONE_NUMBER"
-
-    # Email Credentials (use a Google App Password)
-    MY_MAIL="your-email@gmail.com"
-    MY_PASS="your-google-app-password"
-    ```
-
-### Usage
-
-To run the flight tracker, execute the main script from your terminal:
+Clone the repository:
 
 ```bash
-python main.py
+git clone https://github.com/ManzarMaaz/PYTHON-BOOTCAMP.git
+cd PYTHON-BOOTCAMP/FlightDealTracker
 ```
+
+Install dependencies:
+
+```bash
+pip install requests twilio python-dotenv
+```
+
 ---
 
-## 📄 License
+## 🔐 Environment Variables
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+Create a `.env` file in your project root with the following keys (replace placeholders):
+
+```
+AMADEUS_API_KEY=your_amadeus_key
+API_SECRET=your_amadeus_secret
+TOKEN_ENDPOINT=https://test.api.amadeus.com/v1/security/oauth2/token
+CITY_SEARCH_ENDPOINT=https://test.api.amadeus.com/v1/reference-data/locations
+FLIGHT_ENDPOINT=https://test.api.amadeus.com/v2/shopping/flight-offers
+SHEETY_PRICES_ENDPOINT=https://api.sheety.co/your/prices
+SHEETY_USERS_ENDPOINT=https://api.sheety.co/your/users
+SHEETY_USERNAME=your_username
+SHEETY_PASSWORD=your_password
+TWILIO_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_auth
+TWILIO_VIRTUAL_NUMBER=+123456789
+TWILIO_VERIFIED_NUMBER=+987654321
+MY_MAIL=youremail@gmail.com
+MY_PASS=yourpassword
+```
+
+> Keep `.env` out of version control (add to `.gitignore`).
+
+---
+
+## 🚀 Usage
+
+Run the flight tracker:
+
+```bash
+python flight_tracker.py
+```
+
+The script will:
+
+1. Fetch destination rows from Sheety
+2. Ensure IATA codes are present (update missing ones)
+3. Search for direct and indirect flights via Amadeus
+4. Compare prices and send alerts when deals are below target price
+5. Log results and summaries in the console
+
+---
+
+## 💡 Impact / Learning
+
+* Mastery of **API authentication (OAuth 2.0)** and token handling
+* Integrating **multiple APIs** into a single workflow
+* Modular OOP design for maintainability and testability
+* Real-world notification patterns: **SMS + Email**
+* Secure credential handling with `.env`
+
+---
+
+## 🔮 Future Enhancements
+
+* Add links to airline booking pages in email alerts
+* Store historical deals in a DB for analytics
+* Add Telegram/WhatsApp or push notifications
+* Make flight API calls async for faster processing
+* Add unit tests and CI checks
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see `LICENSE` for details.
+
+---
+
+## 🌐 Connect
+
+👤 **Mohammed Manzar Maaz**
+💼 [LinkedIn](https://www.linkedin.com/in/mohammed-manzar-maaz/)
+💻 [GitHub Repository](https://github.com/ManzarMaaz/PYTHON-BOOTCAMP)
+
+---
+
+⭐ *If this project helped you learn API integration or automation — please star the repo!*
+
+```
+
+---
+
