@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Library</title>
+    {{ bootstrap.load_css() }}
+  </head>
+  <body>
+    <h1><u>My Library</u></h1>
+    {% if not data %}
+    <h3>Library is Empty.</h3>
+    {% endif %}
+    <ul>
+      {% for item in data %}
+      <li>
+        <h3>
+          {{item.title.title()}} - {{item.author.title()}} - {{item.rating}}/10 [<a
+            href="{{ url_for('edit', id=item.id) }}"
+            >Edit Rating</a
+          >] [<a href="{{ url_for('delete', id=item.id) }}" style="color: red">Delete</a
+          >]
+        </h3>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('add' ) }}">Add New Book</a>
+  </body>
+</html>
