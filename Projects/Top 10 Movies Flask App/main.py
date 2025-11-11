@@ -80,8 +80,7 @@ def add():
     # Move headers outside so it's available for both API calls
     headers = {
         "accept": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3OGQ2NTgwOGNjYTliNTk5YTUzOWMyNDk2MTVkOWEzZiIsIm5iZiI6MTc2Mjg1NTY4NC43NTcsInN1YiI6IjY5MTMwYjA0ZWY4YjBlMDhkZTg3NTkwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gShykyAYmG9RmKag8VifRTFnwZpQu2KXsXYEUu5kR_0",
-    }
+        "Authorization": TOKEN}
 
     if form.validate_on_submit():
         search_url = "https://api.themoviedb.org/3/search/movie"
