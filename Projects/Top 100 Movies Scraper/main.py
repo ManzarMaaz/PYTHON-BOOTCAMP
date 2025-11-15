@@ -1,21 +1,21 @@
+from typing import List
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
-URL = "https://web.archive.org/web/20200518073855/https://www.empireonline.com/movies/features/best-movies-2/"
+URL: str = (
+    "https://web.archive.org/web/20200518073855/"
+    "https://www.empireonline.com/movies/features/best-movies-2/"
+)
 
-response = requests.get(URL)
+response: requests.Response = requests.get(URL)
+soup: BeautifulSoup = BeautifulSoup(response.text, "html.parser")
 
-data = response.text
+# Use a list comprehension for cleaner extraction
+movie_names: List[str] = [
+    tag.get_text(strip=True) 
+    for tag in soup.find_all("h3", class_="title")
+]
 
-soup = BeautifulSoup(data, 'html.parser')
-
-movie_name = soup.find_all('h3', class_='title')
-
-movies_names = []
-
-for name in movie_name:
-    movies_names.append(name.get_text())
-
-with open('top100movies.txt',mode='w') as file:
-    for movie in movies_names[::-1]:
-        file.write(f'{movie}\n')
+# Write in reverse order
+with open("top100movies.txt", "w", encoding="utf-8") as file:
+    file.write("\n".join(reversed(movie_names)))
