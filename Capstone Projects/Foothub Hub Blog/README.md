@@ -1,40 +1,79 @@
-# ⚽ The Football Hub – A Full Football Blogging CMS  
-A complete football-focused content management system built with **Flask**, **CKEditor**, **SQLAlchemy**, and **Bootstrap**.  
-Write, edit, manage, and publish football articles — match reports, tactical breakdowns, transfer talks, opinions & more.
+# ⚽ The Football Hub — A Flask-Powered Blog CMS for Football Articles
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python" />
+  <img src="https://img.shields.io/badge/Flask-3.0-black?logo=flask" />
+  <img src="https://img.shields.io/badge/Bootstrap-5.3-success?logo=bootstrap" />
+  <img src="https://img.shields.io/badge/CKEditor-4.25-orange" />
+  <img src="https://img.shields.io/badge/SQLAlchemy-2.0-red" />
+  <img src="https://img.shields.io/badge/SQLite-Database-lightgrey?logo=sqlite" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow" />
+</p>
+
+A full-featured football blogging platform where you can publish match reports, tactical analysis, transfer news, and opinion pieces using a clean Flask CMS with CKEditor-rich text editing.
 
 ---
 
-## 🏆 Badges  
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
-![Flask](https://img.shields.io/badge/Flask-2.x-black?logo=flask)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap)
-![CKEditor](https://img.shields.io/badge/CKEditor-4-green)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.x-red?logo=python)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+## 📸 Screenshots (Replace With Real Ones)
+
+| Homepage | Article View | Editor |
+|----------|--------------|--------|
+| ![Home](https://via.placeholder.com/400x200) | ![Post](https://via.placeholder.com/400x200) | ![Editor](https://via.placeholder.com/400x200) |
 
 ---
 
-## 📸 Project Preview  
-- 📝 Create rich-text football articles  
-- ✏️ Edit existing posts (with auto-updated date)  
-- 🗑 Delete posts  
-- 📰 List of all posts  
-- 🖼 Custom cover image per article  
-- 🔥 Modern UI based on Bootstrap 5  
-- ⚙️ Data stored in SQLite
+## 🌟 Overview
+
+The Football Hub is a Flask-based blogging CMS designed specifically for football content creators.
+
+It includes:
+
+- Dynamic post management  
+- CKEditor-based rich-text editor  
+- SQLite database with SQLAlchemy ORM  
+- Fully themed football UI  
+- Pages for About, Contact, and individual blog posts  
+
+This is a perfect project for learning Flask CRUD operations, templates, and database architecture.
 
 ---
 
-## 📂 Folder Structure
-```
+## 🧩 Features
 
-football_hub/
+- Create, edit, and delete football blog posts  
+- CKEditor full rich-text article editor  
+- Football-themed responsive UI  
+- Auto-generated post dates  
+- SQLite database with SQLAlchemy ORM  
+- Category badges (Match Reports, Transfers, Tactics, Opinions)  
+- Delete buttons and edit buttons per post  
+- Prebuilt pages: Home, About, Contact  
+
+---
+
+## ⚙️ Tech Stack
+
+| Technology | Purpose |
+|-----------|---------|
+| Flask | Backend web framework |
+| Flask-Bootstrap | UI components |
+| CKEditor | Rich-text editor |
+| SQLAlchemy ORM | Database mapping |
+| SQLite | DB storage |
+| Jinja2 | Template rendering |
+| HTML/CSS/Bootstrap | Frontend |
+
+---
+
+## 📁 Project Structure
+
+```text
+FootballHub/
 │
-├── main.py
-├── posts.db
-├── requirements.txt
+├── main.py                # Flask app + routes
+├── posts.db               # SQLite database
 │
-├── templates/
+├── templates/             # Jinja2 templates
 │   ├── index.html
 │   ├── post.html
 │   ├── make-post.html
@@ -44,112 +83,101 @@ football_hub/
 │   └── footer.html
 │
 └── static/
-├── css/styles.css
-├── js/scripts.js
-└── assets/
-├── football-home-bg.jpg
-├── football-contact-bg.jpg
-├── football-editor-bg.jpg
-└── football-about-bg.jpg
-
+    ├── assets/img         # Background images
+    ├── css/styles.css
+    ├── js/scripts.js
+    └── README.md
 ````
 
 ---
 
-## 🚀 Features
+## 🔌 Routes
 
-### ✍️ **Rich Blog Editor (CKEditor 4 LTS)**  
-Create football articles with bold text, headings, images, embed videos & more.
-
-### 📰 **Full Blog CMS**  
-- Create posts  
-- Edit posts  
-- Delete posts  
-- Auto-updated dates  
-- Beautiful front-end layout  
-
-### ⚽ Football-Themed UI  
-Bootstrap + custom styling + category badges.
-
-### 💾 Built with SQLAlchemy  
-SQLite storage with a fully mapped `BlogPost` model.
-
-### 🔐 Secure Forms  
-Flask-WTF + CSRF protection + validators.
+| Route             | Method    | Description                |
+| ----------------- | --------- | -------------------------- |
+| `/`               | GET       | Homepage showing all posts |
+| `/post/<id>`      | GET       | View single article        |
+| `/new-post`       | GET, POST | Create new article         |
+| `/edit_post/<id>` | GET, POST | Edit article               |
+| `/delete/<id>`    | GET, POST | Delete article             |
+| `/about`          | GET       | About page                 |
+| `/contact`        | GET, POST | Contact page               |
 
 ---
 
-## 🛠 Installation
+## 🧭 Workflow Diagram
 
-### 1) Clone Repo
+```mermaid
+flowchart TD
+    A[Homepage] --> B[View Article]
+    A --> C[Create New Post]
+    C --> D[Submit Form]
+    D -->|Valid| E[Save to DB]
+    E --> A
+    F[Edit Post] --> G[Update DB]
+    H[Delete Post] --> I[Remove from DB]
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+
 ```bash
 git clone https://github.com/yourusername/football-hub.git
 cd football-hub
-````
+```
 
-### 2) Install Dependencies
+### 2. Create a virtual environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\activate     # Windows
+```
+
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3) Run the Server
+### 4. Run the server
 
 ```bash
 python main.py
 ```
 
-App runs at:
-👉 [http://127.0.0.1:5003/](http://127.0.0.1:5003/)
+The app runs on:
+[http://127.0.0.1:5003](http://127.0.0.1:5003)
 
 ---
 
-## 🧠 Tech Stack
+## 🧠 Why I Built This
 
-* **Flask** (Backend)
-* **Bootstrap 5** (Frontend)
-* **CKEditor** (Rich Text Editor)
-* **SQLAlchemy ORM**
-* **WTForms + Flask-WTF**
-* **Jinja Templates**
-* **SQLite Database**
+Football websites are everywhere — but building one yourself helps you learn:
 
----
+* CRUD operations in Flask
+* Rich-text editing
+* SQLAlchemy ORM
+* Bootstrap templating
+* Real-world blog structure
 
-## 🧪 API Routes (Internal)
-
-| Route             | Method   | Description     |
-| ----------------- | -------- | --------------- |
-| `/`               | GET      | Show all posts  |
-| `/post/<id>`      | GET      | View article    |
-| `/new-post`       | GET/POST | Create new post |
-| `/edit_post/<id>` | GET/POST | Edit post       |
-| `/delete/<id>`    | GET/POST | Delete post     |
-| `/about`          | GET      | About page      |
-| `/contact`        | GET/POST | Contact page    |
-
----
-
-## ✔ Future Enhancements
-
-* User authentication (login/register)
-* Comments section
-* Image upload instead of URL
-* Categories & tags
-* Pagination
+This project was a perfect way to turn love for football into full-stack development practice.
 
 ---
 
 ## 📜 License
 
-MIT License — free to use and modify.
+Licensed under the MIT License.
 
 ---
 
-## ⭐ Show Support
+## 👤 Author
 
-If this project helped you, consider giving the repo a **star ⭐ on GitHub!**
+Mohammed Manzar Maaz
+LinkedIn: [https://www.linkedin.com/in/mohammed-manzar-maaz](https://www.linkedin.com/in/mohammed-manzar-maaz)
+GitHub: [https://github.com/ManzarMaaz](https://github.com/ManzarMaaz)
 
 ```
-
----
