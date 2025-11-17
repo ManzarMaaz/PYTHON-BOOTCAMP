@@ -1,6 +1,6 @@
 # ⚽ The Football Hub — A Flask-Powered Blog CMS for Football Articles
 
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python" />
   <img src="https://img.shields.io/badge/Flask-3.0-black?logo=flask" />
   <img src="https://img.shields.io/badge/Bootstrap-5.3-success?logo=bootstrap" />
@@ -176,8 +176,7 @@ Licensed under the MIT License.
 
 ## 👤 Author
 
-Mohammed Manzar Maaz
-LinkedIn: [https://www.linkedin.com/in/mohammed-manzar-maaz](https://www.linkedin.com/in/mohammed-manzar-maaz)
-GitHub: [https://github.com/ManzarMaaz](https://github.com/ManzarMaaz)
+**Mohammed Manzar Maaz**  
+🔗 [LinkedIn](https://www.linkedin.com/in/mohammed-manzar-maaz/) | 💻 [GitHub](https://github.com/ManzarMaaz)
 
-```
+---
