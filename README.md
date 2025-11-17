@@ -106,7 +106,13 @@ I write code that is **modular, scalable, and purposeful.**
 ---
 
 ### 🐍 Contribution Snake  
-<img src="https://raw.githubusercontent.com/ManzarMaaz/ManzarMaaz/output/github-contribution-grid-snake.svg" />
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ManzarMaaz/ManzarMaaz/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ManzarMaaz/ManzarMaaz/output/github-snake.svg" />
+    <img alt="GitHub Snake" src="https://raw.githubusercontent.com/ManzarMaaz/ManzarMaaz/output/github-snake.svg" />
+  </picture>
+</p>
 
 ---
 
@@ -199,11 +205,6 @@ If the code saves time — it's worth building.
 - ✔ Designed multiple automation systems  
 - ✔ Developed full-stack applications using Flask & SQL  
 - ✔ Mastered Selenium bots and API-driven workflows  
-
----
-
-# 🎧 **Music I Code To**
-> *Lo-fi beats · Synthwave · Cyberpunk Mix · NCS · Anime Lo-fi*
 
 ---
 
