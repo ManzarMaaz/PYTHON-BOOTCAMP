@@ -35,7 +35,7 @@ It moves away from "black box" authentication providers (like Firebase or Auth0)
 |:---:|:---:|
 | <img src="Screenshots/login.png" width="100%"> | <img src="Screenshots/secrets.png" width="100%"> |
 
-*(Note: Screenshots above are placeholders. Please clone the repo to view the custom gradient UI).*
+*(Screenshots: The Login Interface (Left) and the Secure File Download Page (Right)).*
 
 ---
 
