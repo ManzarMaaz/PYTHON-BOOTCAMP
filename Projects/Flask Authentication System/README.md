@@ -33,7 +33,7 @@ It moves away from "black box" authentication providers (like Firebase or Auth0)
 
 | **Login Screen** | **Protected Secrets Page** |
 |:---:|:---:|
-| <img src="https://via.placeholder.com/400x250?text=Login+UI+Gradient" width="100%"> | <img src="https://via.placeholder.com/400x250?text=Secrets+Download+Page" width="100%"> |
+| <img src="Screenshots/login.png" width="100%"> | <img src="Screenshots/secrets.png" width="100%"> |
 
 *(Note: Screenshots above are placeholders. Please clone the repo to view the custom gradient UI).*
 
