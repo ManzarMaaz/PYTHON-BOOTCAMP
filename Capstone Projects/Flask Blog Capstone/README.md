@@ -32,9 +32,7 @@ It demonstrates how to manage complex relationships between **Users**, **Posts**
 
 | **Homepage Feed** | **Article View** | **Admin Editor** |
 |:---:|:---:|:---:|
-| <img src="https://via.placeholder.com/400x200?text=Home+Feed" width="100%"> | <img src="https://via.placeholder.com/400x200?text=Post+View" width="100%"> | <img src="https://via.placeholder.com/400x200?text=CKEditor+Interface" width="100%"> |
-
-*(Note: Screenshots above are placeholders. Please clone the repo to view the UI).*
+| <img src="images/home.png" width="100%"> | <img src="images/post.png" width="100%"> | <img src="images/edit.png" width="100%"> |
 
 ---
 
